@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "326991550645",
+    "firebase_url": "https://kazziworker.firebaseio.com",
+    "project_id": "kazziworker",
+    "storage_bucket": "kazziworker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326991550645:android:f0f8a5b01fd5afc0",
+        "android_client_info": {
+          "package_name": "com.example.kelvincb.kazziworkerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326991550645-sfamtho7gf6oajlliu3jhshieh1dp2t6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kelvincb.kazziworkerapp",
+            "certificate_hash": "50bff33a48ac66f549ee04c2c8b8e151f9a42897"
+          }
+        },
+        {
+          "client_id": "326991550645-8v106uuesacb0shd9e1a37m06qcn8i1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrbmZUYh2cM8jfiu3L5wzQNZxLICkflmQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326991550645-8v106uuesacb0shd9e1a37m06qcn8i1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326991550645:android:92fd10c5d4ecb498",
+        "android_client_info": {
+          "package_name": "com.example.kelvincb.kazziworkerapp.LoginPackage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326991550645-l40m68fcaamqtnbrlm5fne21ql66efi1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kelvincb.kazziworkerapp.LoginPackage",
+            "certificate_hash": "50bff33a48ac66f549ee04c2c8b8e151f9a42897"
+          }
+        },
+        {
+          "client_id": "326991550645-8v106uuesacb0shd9e1a37m06qcn8i1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrbmZUYh2cM8jfiu3L5wzQNZxLICkflmQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326991550645-8v106uuesacb0shd9e1a37m06qcn8i1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
