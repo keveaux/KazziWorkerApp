@@ -24,7 +24,7 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/pending_user_image"
+                android:id="@+id/accepted_user_image"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_alignParentStart="true"
@@ -35,7 +35,7 @@
 
 
             <TextView
-                android:id="@+id/pending_worktxt"
+                android:id="@+id/accepted_worktxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -49,11 +49,11 @@
 
 
             <TextView
-                android:id="@+id/pending_date"
+                android:id="@+id/accepted_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_alignStart="@+id/pending_worktxt"
+                android:layout_alignStart="@+id/accepted_worktxt"
                 android:layout_marginBottom="18dp"
                 android:text="date"
                 android:textColor="@color/colorAccent" />
@@ -66,38 +66,38 @@
                 android:layout_marginBottom="53dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginStart="102dp"
-                android:layout_toRightOf="@+id/pending_user_image"
+                android:layout_toRightOf="@+id/accepted_user_image"
                 android:background="#1d1d1d"
                 />
 
             <TextView
-                android:id="@+id/pending_user_name"
+                android:id="@+id/accepted_user_name"
                 android:layout_width="wrap_content"
                 android:layout_marginTop="4dp"
                 android:paddingLeft="4dp"
                 android:maxLines="1"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/pending_worktxt"
-                android:layout_below="@+id/pending_worktxt"
+                android:layout_alignStart="@+id/accepted_worktxt"
+                android:layout_below="@+id/accepted_worktxt"
                 android:text="kevin muriithi" />
 
             <TextView
-                android:id="@+id/pending_details"
+                android:id="@+id/accepted_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/pending_date"
+                android:layout_alignBottom="@+id/accepted_date"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="20dp"
                 android:textColor="#faea09"
                 android:textSize="20dp"
-                android:text="REVIEW" />
+                android:text="DETAILS" />
 
             <TextView
-                android:id="@+id/pending_location"
+                android:id="@+id/accepted_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/pending_worktxt"
-                android:layout_below="@+id/pending_user_name"
+                android:layout_alignStart="@+id/accepted_worktxt"
+                android:layout_below="@+id/accepted_user_name"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="4dp"
                 android:maxLines="1"

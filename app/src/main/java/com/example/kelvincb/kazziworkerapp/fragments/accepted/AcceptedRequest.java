@@ -1,4 +1,4 @@
-package com.example.kelvincb.kazziworkerapp.fragments.Pending;
+package com.example.kelvincb.kazziworkerapp.fragments.accepted;
 
 import android.content.Context;
 import android.net.Uri;
@@ -11,18 +11,17 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.kelvincb.kazziworkerapp.R;
 import com.example.kelvincb.kazziworkerapp.fetchWorkerId;
+import com.example.kelvincb.kazziworkerapp.fragments.Pending.PendingJsonDownloader;
 
 
-public class PendingRequest extends Fragment {
+public class AcceptedRequest extends Fragment {
 
     View view;
     private static String SITE_URL = "";
     ProgressBar myProgressBar;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,12 +33,11 @@ public class PendingRequest extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        view=inflater.inflate(R.layout.fragment_accepted_request, container, false);
 
-         view= inflater.inflate(R.layout.fragment_pending_request, container, false);
+        myProgressBar = view.findViewById(R.id.accepted_progressbar);
 
-         myProgressBar = view.findViewById(R.id.processed_progressbar);
-
-         myProgressBar.setVisibility(View.VISIBLE);
+        myProgressBar.setVisibility(View.VISIBLE);
 
 
         final fetchWorkerId fetchWorkerID=new fetchWorkerId(getContext());
@@ -59,20 +57,19 @@ public class PendingRequest extends Fragment {
             }
         }, 2000);
 
-
         return view;
     }
 
-
     public void fetchRequest(){
 
-        final ListView lv = view.findViewById(R.id.processed_ListView);
+        final ListView lv = view.findViewById(R.id.accepted_ListView);
 
-        final TextView tv=view.findViewById(R.id.processingtxt);
+        final TextView tv=view.findViewById(R.id.acceptedtxt);
 
-        new PendingJsonDownloader (getActivity()).retrieveRequestInfo(SITE_URL,lv,tv,myProgressBar);
+        new AcceptedJsonDownloader(getActivity()).retrieveRequestInfo(SITE_URL,lv,tv,myProgressBar);
 
     }
+
 
 
 }

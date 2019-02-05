@@ -1,4 +1,4 @@
-package com.example.kelvincb.kazziworkerapp.fragments.Pending;
+package com.example.kelvincb.kazziworkerapp.fragments.accepted;
 
 import android.content.Context;
 import android.view.View;
@@ -13,25 +13,26 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.kelvincb.kazziworkerapp.fragments.Pending.PendingAdapterClass;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class PendingJsonDownloader {
+public class AcceptedJsonDownloader {
 
     private final Context c;
-    private PendingAdapterClass adapter;
+    private AcceptedAdapterClass adapter;
     RequestQueue requestQueue;
 
-    public PendingJsonDownloader(Context c) {
+    public AcceptedJsonDownloader(Context c) {
         this.c = c;
     }
 
     public void retrieveRequestInfo(String URL, final ListView listView, final TextView tv, final ProgressBar myProgressBar) {
 
-        final ArrayList<PendingGetterSetterClass> requestList = new ArrayList<>();
+        final ArrayList<AcceptedGetterSetterClass> requestList = new ArrayList<>();
 
         myProgressBar.setIndeterminate(true);
         myProgressBar.setVisibility(View.VISIBLE);
@@ -50,7 +51,7 @@ public class PendingJsonDownloader {
                 }
                 try{
 
-                    PendingGetterSetterClass pendingGetterSetterClass;
+                    AcceptedGetterSetterClass acceptedGetterSetterClass;
                     JSONArray ja = response.getJSONArray("results");
                     for (int i = 0; i < ja.length(); i++) {
                         JSONObject jsonObject = ja.getJSONObject(i);
@@ -66,34 +67,27 @@ public class PendingJsonDownloader {
                         String url=jsonObject.getString("image");
                         String location=jsonObject.getString("location");
                         String currentdate=jsonObject.getString("currentdate");
-                        String status=jsonObject.getString("status");
 
 
-                    pendingGetterSetterClass=new PendingGetterSetterClass();
-                    pendingGetterSetterClass.setId(id);
-                    pendingGetterSetterClass.setUser_name(user_name);
-                    pendingGetterSetterClass.setUser_phone_number(phone_number);
-                    pendingGetterSetterClass.setDate(date);
-                    pendingGetterSetterClass.setTime(time);
-                    pendingGetterSetterClass.setJob_desctiption(job_description);
-                    pendingGetterSetterClass.setLandmark(landmark);
-                    pendingGetterSetterClass.setImage_url(url);
-                    pendingGetterSetterClass.setLocation(location);
-                    pendingGetterSetterClass.setCurrentdate(currentdate);
-                    pendingGetterSetterClass.setStatus(status);
+                        acceptedGetterSetterClass=new AcceptedGetterSetterClass();
+                        acceptedGetterSetterClass.setUser_name(user_name);
+                        acceptedGetterSetterClass.setUser_phone_number(phone_number);
+                        acceptedGetterSetterClass.setDate(date);
+                        acceptedGetterSetterClass.setTime(time);
+                        acceptedGetterSetterClass.setJobdescription(job_description);
+                        acceptedGetterSetterClass.setLandmark(landmark);
+                        acceptedGetterSetterClass.setImage_url(url);
+                        acceptedGetterSetterClass.setLocation(location);
+                        acceptedGetterSetterClass.setDatesent(currentdate);
 
-                        if(pendingGetterSetterClass.getStatus().equals("0")) {
 
-                            requestList.add(pendingGetterSetterClass);
+                            requestList.add(acceptedGetterSetterClass);
 
-                        }else {
-                            tv.setVisibility(View.VISIBLE);
 
-                        }
 
                     }
 
-                    adapter = new PendingAdapterClass(c,requestList);
+                    adapter = new AcceptedAdapterClass(c,requestList);
                     listView.setAdapter(adapter);
                     myProgressBar.setVisibility(View.GONE);
 
@@ -113,4 +107,4 @@ public class PendingJsonDownloader {
         requestQueue.add(jor);
 
     }
-    }
+}
