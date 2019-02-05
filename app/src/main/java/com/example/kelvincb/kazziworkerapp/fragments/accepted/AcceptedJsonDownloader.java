@@ -57,7 +57,6 @@ public class AcceptedJsonDownloader {
                         JSONObject jsonObject = ja.getJSONObject(i);
 
 
-                        String id=jsonObject.getString("id");
                         String user_name=jsonObject.getString("user_name");
                         String phone_number=jsonObject.getString("user_phone_number");
                         String date=jsonObject.getString("mdate");
@@ -81,7 +80,7 @@ public class AcceptedJsonDownloader {
                         acceptedGetterSetterClass.setDatesent(currentdate);
 
 
-                            requestList.add(acceptedGetterSetterClass);
+                        requestList.add(acceptedGetterSetterClass);
 
 
 
@@ -99,7 +98,10 @@ public class AcceptedJsonDownloader {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(c, "" + error, Toast.LENGTH_SHORT).show();
+                        if(error.toString().equals("com.android.volley.TimeoutError")){
+                            Toast.makeText(c, "check your internet connection" , Toast.LENGTH_SHORT).show();
+
+                        }
                     }
                 }
 

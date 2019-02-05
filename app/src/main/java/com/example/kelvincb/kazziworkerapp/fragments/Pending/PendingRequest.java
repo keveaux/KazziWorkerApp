@@ -1,7 +1,5 @@
 package com.example.kelvincb.kazziworkerapp.fragments.Pending;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -11,10 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.kelvincb.kazziworkerapp.R;
-import com.example.kelvincb.kazziworkerapp.fetchWorkerId;
+import com.example.kelvincb.kazziworkerapp.fetchWorkerInfo;
 
 
 public class PendingRequest extends Fragment {
@@ -42,8 +39,8 @@ public class PendingRequest extends Fragment {
          myProgressBar.setVisibility(View.VISIBLE);
 
 
-        final fetchWorkerId fetchWorkerID=new fetchWorkerId(getContext());
-        fetchWorkerID.fetchID();
+        final fetchWorkerInfo fetchWorkerID=new fetchWorkerInfo(getContext());
+        fetchWorkerID.fetchData();
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -63,6 +60,26 @@ public class PendingRequest extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        final fetchWorkerInfo fetchWorkerID=new fetchWorkerInfo(getContext());
+        fetchWorkerID.fetchData();
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                String id=fetchWorkerID.getWorker_id();
+                SITE_URL = "http://104.248.124.210/android/iKazi/phpFiles/workerfetchPendingRequests.php?id=" +id;
+
+                fetchRequest();
+
+
+            }
+        }, 2000);
+        super.onResume();
+    }
 
     public void fetchRequest(){
 

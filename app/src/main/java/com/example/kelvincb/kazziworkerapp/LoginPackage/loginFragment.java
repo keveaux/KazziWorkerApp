@@ -391,7 +391,7 @@ public class loginFragment extends Fragment {
         } else {
             // Signed in
 
-            Intent intent = new Intent(getActivity(), MainActivity.class);
+            Intent intent = new Intent(getContext(), MainActivity.class);
             intent.putExtra("EXTRA","openMain");
             startActivity(intent);
             getActivity().finish();
