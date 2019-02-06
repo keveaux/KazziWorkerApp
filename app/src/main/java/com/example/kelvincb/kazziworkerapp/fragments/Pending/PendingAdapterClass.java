@@ -89,6 +89,7 @@ public class PendingAdapterClass extends BaseAdapter{
                String jobdesc=pendingGetterSetterClass.getJob_desctiption();
                String landmark=pendingGetterSetterClass.getLandmark();
                String jobid=pendingGetterSetterClass.getId();
+               String user_pno=pendingGetterSetterClass.getUser_phone_number();
 
 
                Bundle sendData=new Bundle();
@@ -98,6 +99,7 @@ public class PendingAdapterClass extends BaseAdapter{
                sendData.putString("time",time);
                sendData.putString("landmark",landmark);
                sendData.putString("id",jobid);
+               sendData.putString("pno",user_pno);
 
                Intent intent=new Intent(c,PendingInfo.class);
                intent.putExtras(sendData);

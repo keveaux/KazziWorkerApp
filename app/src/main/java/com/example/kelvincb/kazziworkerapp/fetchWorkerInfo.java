@@ -121,11 +121,8 @@ public class fetchWorkerInfo {
                 try {
                     JSONObject parentObject = new JSONObject(response);
 
-                    String id=parentObject.getJSONObject("results").getString("workerId");
+                    String id=parentObject.getJSONObject("results").getString("id");
                     String name=parentObject.getJSONObject("results").getString("name");
-                    setWorker_name(name);
-
-
                     String phone_no=parentObject.getJSONObject("results").getString("phonenumber");
                     String occupation=parentObject.getJSONObject("results").getString("occupation");
                     String skillset=parentObject.getJSONObject("results").getString("skillSet");
@@ -133,6 +130,8 @@ public class fetchWorkerInfo {
                     String no_of_rates=parentObject.getJSONObject("results").getString("numberOfRates");
                     String imageurl=parentObject.getJSONObject("results").getString("imageUrl");
 
+
+                    setWorker_name(name);
                     setWorker_id(id);
                     setPhone_no(phone_no);
                     setOccupation(occupation);

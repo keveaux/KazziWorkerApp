@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -17,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kelvincb.kazziworkerapp.MainActivity;
 import com.example.kelvincb.kazziworkerapp.R;
 import com.example.kelvincb.kazziworkerapp.myRequestHandler;
 import com.google.android.gms.ads.InterstitialAd;
@@ -27,6 +29,7 @@ import java.util.HashMap;
 public class PendingInfo extends AppCompatActivity {
 
     TextView name,nametxt,date,datetxt,time,timetxt,jobdesc,jobdesctxt,landmark,landmarktxt;
+    String user_pno;
     Button accepted,rejected;
     private InterstitialAd mInterstitialAd;
     String id;
@@ -81,6 +84,7 @@ public class PendingInfo extends AppCompatActivity {
             String date = bundle.getString("date");
             String jobDescription = bundle.getString("jobdesc");
             String landmark=bundle.getString("landmark");
+            user_pno=bundle.getString("pno");
             id=bundle.getString("id");
 
 
@@ -192,10 +196,10 @@ public class PendingInfo extends AppCompatActivity {
                 super.onPostExecute(s);
                 loading.dismiss();
                 if(s.equals("Successfully Uploaded")){
-
+                    Intent intent=new Intent(PendingInfo.this, MainActivity.class);
+                    startActivity(intent);
                 }
 
-                Toast.makeText(PendingInfo.this, ""+s, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -206,6 +210,7 @@ public class PendingInfo extends AppCompatActivity {
                 HashMap<String,String> data = new HashMap<>();
 
                 data.put("id", id);
+                data.put("pno",user_pno);
 
                 String result = rh.sendPostRequest(UPDATE_URL,data);
 
@@ -220,6 +225,7 @@ public class PendingInfo extends AppCompatActivity {
 
 
     public void acceptRequest(){
+
 
         class acceptRequest extends AsyncTask<Void,Void,String> {
 
@@ -237,9 +243,12 @@ public class PendingInfo extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
+
                 if(s.equals("Successfully Uploaded")){
                     Toast.makeText(PendingInfo.this, "complete!!! check your accepted requests", Toast.LENGTH_SHORT).show();
 
+                    Intent intent=new Intent(PendingInfo.this, MainActivity.class);
+                    startActivity(intent);
                 }
 
 
@@ -252,6 +261,8 @@ public class PendingInfo extends AppCompatActivity {
                 HashMap<String,String> data = new HashMap<>();
 
                 data.put("id", id);
+                data.put("pno",user_pno);
+
 
                 String result = rh.sendPostRequest(ACCEPT_URL,data);
 

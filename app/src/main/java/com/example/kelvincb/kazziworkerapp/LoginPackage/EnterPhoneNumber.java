@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.kelvincb.kazziworkerapp.MainActivity;
 import com.example.kelvincb.kazziworkerapp.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +39,7 @@ public class EnterPhoneNumber extends Fragment {
     EditText phone_no;
     Button next;
     ProgressBar progressBar;
+    String token;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,10 @@ public class EnterPhoneNumber extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_enter_phone_number, container, false);
+
+        token= FirebaseInstanceId.getInstance().getToken();
+        Toast.makeText(getContext(), ""+token, Toast.LENGTH_SHORT).show();
+        Log.d("token",token);
 
         details=view.findViewById(R.id.detes);
         phone_no=view.findViewById(R.id.phonenumber);
