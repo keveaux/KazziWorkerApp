@@ -54,7 +54,6 @@ public class EnterPhoneNumber extends Fragment {
         view= inflater.inflate(R.layout.fragment_enter_phone_number, container, false);
 
         token= FirebaseInstanceId.getInstance().getToken();
-        Toast.makeText(getContext(), ""+token, Toast.LENGTH_SHORT).show();
         Log.d("token",token);
 
         details=view.findViewById(R.id.detes);

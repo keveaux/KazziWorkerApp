@@ -24,6 +24,9 @@ import com.example.kelvincb.kazziworkerapp.myRequestHandler;
 import com.google.android.gms.ads.InterstitialAd;
 import com.squareup.picasso.RequestHandler;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 public class PendingInfo extends AppCompatActivity {
@@ -32,7 +35,7 @@ public class PendingInfo extends AppCompatActivity {
     String user_pno;
     Button accepted,rejected;
     private InterstitialAd mInterstitialAd;
-    String id;
+    String id,formattedDate;
     public static final String UPDATE_URL = "http://104.248.124.210/android/iKazi/phpFiles/rejectrequest.php";
 
     public static final String ACCEPT_URL = "http://104.248.124.210/android/iKazi/phpFiles/acceptrequest.php";
@@ -43,18 +46,26 @@ public class PendingInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pending_info);
 
-    name=findViewById(R.id.textView_name);
-    nametxt=findViewById(R.id.name);
-    date=findViewById(R.id.textView_date);
-    datetxt=findViewById(R.id.date);
-    time=findViewById(R.id.textView_time);
-    timetxt=findViewById(R.id.time);
-    jobdesc=findViewById(R.id.textView_jobdesc);
-    jobdesctxt=findViewById(R.id.jobDescription);
-    landmark=findViewById(R.id.textView_landmark);
-    landmarktxt=findViewById(R.id.landmark);
-    rejected=findViewById(R.id.rejectbtn);
-    accepted=findViewById(R.id.acceptbtn);
+        //get current date
+        Date c = Calendar.getInstance().getTime();
+
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        formattedDate = df.format(c);
+
+        Toast.makeText(this, ""+formattedDate, Toast.LENGTH_SHORT).show();
+
+        name=findViewById(R.id.textView_name);
+        nametxt=findViewById(R.id.name);
+        date=findViewById(R.id.textView_date);
+        datetxt=findViewById(R.id.date);
+        time=findViewById(R.id.textView_time);
+        timetxt=findViewById(R.id.time);
+        jobdesc=findViewById(R.id.textView_jobdesc);
+        jobdesctxt=findViewById(R.id.jobDescription);
+        landmark=findViewById(R.id.textView_landmark);
+        landmarktxt=findViewById(R.id.landmark);
+        rejected=findViewById(R.id.rejectbtn);
+        accepted=findViewById(R.id.acceptbtn);
 
         Typeface font=Typeface.createFromAsset(getAssets(),"RobotoSlab-Bold.ttf");
         name.setTypeface(font);
@@ -211,6 +222,9 @@ public class PendingInfo extends AppCompatActivity {
 
                 data.put("id", id);
                 data.put("pno",user_pno);
+                data.put("date",formattedDate);
+
+
 
                 String result = rh.sendPostRequest(UPDATE_URL,data);
 
@@ -262,6 +276,8 @@ public class PendingInfo extends AppCompatActivity {
 
                 data.put("id", id);
                 data.put("pno",user_pno);
+                data.put("date",formattedDate);
+
 
 
                 String result = rh.sendPostRequest(ACCEPT_URL,data);

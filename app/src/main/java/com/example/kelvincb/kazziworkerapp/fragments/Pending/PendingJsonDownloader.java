@@ -87,7 +87,6 @@ public class PendingJsonDownloader {
                             requestList.add(pendingGetterSetterClass);
 
                         }else {
-                            tv.setVisibility(View.VISIBLE);
 
                         }
 
