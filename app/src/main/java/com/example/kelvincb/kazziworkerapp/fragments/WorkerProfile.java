@@ -57,17 +57,17 @@ public class WorkerProfile extends Fragment {
         logout=view.findViewById(R.id.logout);
         final ProgressBar progressBar=view.findViewById(R.id.profile_progressBar);
 
-        Typeface font1=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
+        Typeface boldfont=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
 
-        worker_name.setTypeface(font1);
-        info.setTypeface(font1);
-        logout.setTypeface(font1);
+        worker_name.setTypeface(boldfont);
+        info.setTypeface(boldfont);
+        logout.setTypeface(boldfont);
 
         Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Light.ttf");
 
         worker_location.setTypeface(font);
-        num_of_jobs.setTypeface(font);
-        rating_tv.setTypeface(font);
+        num_of_jobs.setTypeface(boldfont);
+        rating_tv.setTypeface(boldfont);
         profession.setTypeface(font);
         phone_number.setTypeface(font);
 
@@ -99,13 +99,13 @@ public class WorkerProfile extends Fragment {
                  if(rating==null ){
                      Toast.makeText(getActivity(), "check your internet connection", Toast.LENGTH_SHORT).show();
                  }else if(rating.equals("0")){
-                     rating_tv.setText("0.0\nrating");
+                     rating_tv.setText("0.0");
 
                  }
                  else{
                      double workerrating = Double.parseDouble(rating) / Double.parseDouble(numberofrates);
                      DecimalFormat df = new DecimalFormat("#.##");
-                     rating_tv.setText(""+df.format(workerrating)+"\nrating");
+                     rating_tv.setText(""+df.format(workerrating));
                  }
 
                 phone_number.setText(phone_no);
@@ -124,7 +124,7 @@ public class WorkerProfile extends Fragment {
                     startActivity(i);
                 }
                 doubleBackToExitPressedOnce = true;
-                Toast.makeText(getActivity(), "Please click LOGOUT again to exit", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Please click SIGN OUT again to exit", Toast.LENGTH_SHORT).show();
 
                 new Handler().postDelayed(new Runnable() {
 

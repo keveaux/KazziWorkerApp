@@ -7,21 +7,17 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/MyMaterialTheme"
-        android:largeHeap="true"
-
-        >
-        <activity android:name=".MainActivity"
-            ></activity>
+        android:theme="@style/MyMaterialTheme">
+        <activity android:name=".MainActivity" />
 
         <service android:name=".LoginPackage.firebase.MyFirebaseMessagingService">
             <intent-filter>
@@ -34,29 +30,30 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".IntroSlider.WelcomeActivity"
-            android:theme="@style/MyMaterialTheme"
-            >
+        <activity
+            android:name=".IntroSlider.WelcomeActivity"
+            android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".splashScreen.SplashScreenActivity"
-            android:theme="@style/MyMaterialTheme"
-            />
-        <activity android:name=".LoginPackage.LoginActivity"
-            android:theme="@style/MyMaterialTheme"
-            />
-        <activity android:name=".fragments.Pending.PendingInfo"></activity>
+        <activity
+            android:name=".splashScreen.SplashScreenActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".LoginPackage.LoginActivity"
+            android:theme="@style/MyMaterialTheme" />
+        <activity android:name=".fragments.Pending.PendingInfo" />
 
-        <service
-            android:name=".FCMMessagingService">
+        <service android:name=".FCMMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".trial"></activity>
     </application>
 
 </manifest>

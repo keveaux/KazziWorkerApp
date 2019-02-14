@@ -54,14 +54,12 @@ public class mainFragment extends Fragment {
         tabOne.setText("PENDING");
         Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
         tabOne.setTypeface(font);
-        tabOne.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_pending, 0, 0);
         tabLayout.getTabAt(0).setCustomView(tabOne);
 
         TextView tabTwo = (TextView) LayoutInflater.from(getActivity()).inflate(R.layout.custom_tab, null);
         tabTwo.setText("ACCEPTED");
         Typeface font2=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
         tabTwo.setTypeface(font2);
-        tabTwo.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_accepted, 0, 0);
         tabLayout.getTabAt(1).setCustomView(tabTwo);
 
 

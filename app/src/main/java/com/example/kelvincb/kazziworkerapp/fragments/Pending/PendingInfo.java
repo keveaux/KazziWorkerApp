@@ -258,6 +258,7 @@ public class PendingInfo extends AppCompatActivity {
                 super.onPostExecute(s);
                 loading.dismiss();
 
+                Toast.makeText(PendingInfo.this, ""+s, Toast.LENGTH_SHORT).show();
                 if(s.equals("Successfully Uploaded")){
                     Toast.makeText(PendingInfo.this, "complete!!! check your accepted requests", Toast.LENGTH_SHORT).show();
 
