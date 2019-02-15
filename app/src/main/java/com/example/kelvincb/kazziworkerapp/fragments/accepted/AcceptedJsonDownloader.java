@@ -50,6 +50,8 @@ public class AcceptedJsonDownloader {
 
                 }
                 try{
+                    tv.setVisibility(View.GONE);
+
 
                     AcceptedGetterSetterClass acceptedGetterSetterClass;
                     JSONArray ja = response.getJSONArray("results");

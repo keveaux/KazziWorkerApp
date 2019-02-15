@@ -23,5 +23,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="processing">your requests will appear here</string>
-    <string name="accepted">accepted requests will appear here</string>
+    <string name="details">Request Details</string>
+    <string name="accepted">your accepted request will appear here</string>
 </resources>

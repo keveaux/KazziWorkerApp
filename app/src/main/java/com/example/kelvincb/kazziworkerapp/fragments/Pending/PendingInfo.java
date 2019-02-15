@@ -11,6 +11,7 @@ import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kelvincb.kazziworkerapp.MainActivity;
+import com.example.kelvincb.kazziworkerapp.PicassoClient;
 import com.example.kelvincb.kazziworkerapp.R;
 import com.example.kelvincb.kazziworkerapp.myRequestHandler;
 import com.google.android.gms.ads.InterstitialAd;
@@ -31,20 +33,37 @@ import java.util.HashMap;
 
 public class PendingInfo extends AppCompatActivity {
 
-    TextView name,nametxt,date,datetxt,time,timetxt,jobdesc,jobdesctxt,landmark,landmarktxt;
+    TextView nametxt,date,datetxt,time,timetxt,jobdesc,jobdesctxt,landmark,landmarktxt,details;
     String user_pno;
     Button accepted,rejected;
     private InterstitialAd mInterstitialAd;
     String id,formattedDate;
+    ImageView userImage;
     public static final String UPDATE_URL = "http://104.248.124.210/android/iKazi/phpFiles/rejectrequest.php";
 
     public static final String ACCEPT_URL = "http://104.248.124.210/android/iKazi/phpFiles/acceptrequest.php";
 
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pending_info);
+
+
+        toolbar=findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
 
         //get current date
         Date c = Calendar.getInstance().getTime();
@@ -52,9 +71,7 @@ public class PendingInfo extends AppCompatActivity {
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         formattedDate = df.format(c);
 
-        Toast.makeText(this, ""+formattedDate, Toast.LENGTH_SHORT).show();
 
-        name=findViewById(R.id.textView_name);
         nametxt=findViewById(R.id.name);
         date=findViewById(R.id.textView_date);
         datetxt=findViewById(R.id.date);
@@ -66,9 +83,10 @@ public class PendingInfo extends AppCompatActivity {
         landmarktxt=findViewById(R.id.landmark);
         rejected=findViewById(R.id.rejectbtn);
         accepted=findViewById(R.id.acceptbtn);
+        details=findViewById(R.id.details);
+        userImage=findViewById(R.id.user_profile_image);
 
         Typeface font=Typeface.createFromAsset(getAssets(),"RobotoSlab-Bold.ttf");
-        name.setTypeface(font);
         nametxt.setTypeface(font);
         date.setTypeface(font);
         datetxt.setTypeface(font);
@@ -80,6 +98,7 @@ public class PendingInfo extends AppCompatActivity {
         landmarktxt.setTypeface(font);
         rejected.setTypeface(font);
         accepted.setTypeface(font);
+        details.setTypeface(font);
 
         mInterstitialAd = new InterstitialAd(PendingInfo.this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
@@ -97,6 +116,7 @@ public class PendingInfo extends AppCompatActivity {
             String landmark=bundle.getString("landmark");
             user_pno=bundle.getString("pno");
             id=bundle.getString("id");
+            String url=bundle.getString("url");
 
 
             nametxt.setText(name);
@@ -105,6 +125,9 @@ public class PendingInfo extends AppCompatActivity {
             timetxt.setText(time);
             jobdesctxt.setText(jobDescription);
             landmarktxt.setText(landmark);
+
+
+            PicassoClient.loadImage(url,userImage);
 
 
             accepted.setOnClickListener(new View.OnClickListener() {
@@ -292,6 +315,8 @@ public class PendingInfo extends AppCompatActivity {
 
     }
 
-
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

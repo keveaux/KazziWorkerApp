@@ -62,14 +62,16 @@ public class WorkerProfile extends Fragment {
         worker_name.setTypeface(boldfont);
         info.setTypeface(boldfont);
         logout.setTypeface(boldfont);
+        profession.setTypeface(boldfont);
+        phone_number.setTypeface(boldfont);
+
 
         Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Light.ttf");
 
         worker_location.setTypeface(font);
         num_of_jobs.setTypeface(boldfont);
         rating_tv.setTypeface(boldfont);
-        profession.setTypeface(font);
-        phone_number.setTypeface(font);
+
 
         final fetchWorkerInfo fetchWorkerInfo = new fetchWorkerInfo(getContext());
         fetchWorkerInfo.fetchData();
