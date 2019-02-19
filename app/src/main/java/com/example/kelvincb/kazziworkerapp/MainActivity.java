@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.kelvincb.kazziworkerapp.fragments.JobAds;
 import com.example.kelvincb.kazziworkerapp.fragments.WorkerProfile;
 import com.example.kelvincb.kazziworkerapp.fragments.mainFragment;
 import com.google.android.gms.ads.AdRequest;
@@ -71,6 +72,15 @@ public class MainActivity extends AppCompatActivity {
                         }
                         isBackPressed = false;
                         fragment=new mainFragment();
+                        loadFragment(fragment);
+                        return true;
+
+                    case R.id.navigation_ads:
+                        if(!isBackPressed) {
+                            pushFragmentIntoStack(R.id.navigation_ads);
+                        }
+                        isBackPressed = false;
+                        fragment=new JobAds();
                         loadFragment(fragment);
                         return true;
 

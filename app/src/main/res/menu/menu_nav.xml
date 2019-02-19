@@ -4,7 +4,13 @@
     <item
         android:id="@+id/navigation_home"
         android:title="Home"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/xhome"
+        />
+
+    <item
+        android:id="@+id/navigation_ads"
+        android:title="Job Ads"
+        android:icon="@drawable/ads"
         />
 
     <item
