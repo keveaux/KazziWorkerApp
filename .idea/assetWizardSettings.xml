@@ -45,10 +45,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\Kelvin CB\Downloads\rate-star-button (3).png" />
-                                      <entry key="outputName" value="ic_rate" />
+                                      <entry key="imageAsset" value="C:\Users\Kelvin CB\Downloads\telephone.png" />
+                                      <entry key="outputName" value="phone" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="1fd5ad" />
+                                      <entry key="themeColor" value="ffffff" />
                                     </map>
                                   </option>
                                 </PersistentState>

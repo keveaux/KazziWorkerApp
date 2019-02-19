@@ -25,4 +25,5 @@
     <string name="processing">your requests will appear here</string>
     <string name="details">Request Details</string>
     <string name="accepted">your accepted request will appear here</string>
+    <string name="request">Request details</string>
 </resources>

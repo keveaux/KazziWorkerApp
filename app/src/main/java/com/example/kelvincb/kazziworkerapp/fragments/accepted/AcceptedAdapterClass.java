@@ -1,7 +1,9 @@
 package com.example.kelvincb.kazziworkerapp.fragments.accepted;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,11 +60,14 @@ public class AcceptedAdapterClass extends BaseAdapter{
 
 
 
+        Typeface boldfont=Typeface.createFromAsset(c.getAssets(),"RobotoSlab-Bold.ttf");
+        location.setTypeface(boldfont);
+
+
         Typeface font=Typeface.createFromAsset(c.getAssets(),"RobotoSlab-Light.ttf");
         userName.setTypeface(font);
         work.setTypeface(font);
         date.setTypeface(font);
-        location.setTypeface(font);
 
         final AcceptedGetterSetterClass acceptedGetterSetterClass=(AcceptedGetterSetterClass) this.getItem(position);
 
@@ -77,6 +82,30 @@ public class AcceptedAdapterClass extends BaseAdapter{
             @Override
             public void onClick(View v) {
 
+                String name=acceptedGetterSetterClass.getUser_name();
+                String date=acceptedGetterSetterClass.getDate();
+                String time=acceptedGetterSetterClass.getTime();
+                String jobdesc=acceptedGetterSetterClass.getJobdescription();
+                String landmark=acceptedGetterSetterClass.getLandmark();
+                String user_pno=acceptedGetterSetterClass.getUser_phone_number();
+                String url=acceptedGetterSetterClass.getImage_url();
+                String location=acceptedGetterSetterClass.getLocation();
+
+
+                Bundle sendData=new Bundle();
+                sendData.putString("name",name);
+                sendData.putString("jobdesc",jobdesc);
+                sendData.putString("date",date);
+                sendData.putString("time",time);
+                sendData.putString("landmark",landmark);
+                sendData.putString("pno",user_pno);
+                sendData.putString("url",url);
+                sendData.putString("location",location);
+
+
+                Intent intent=new Intent(c,AcceptedTaskInfo.class);
+                intent.putExtras(sendData);
+                c.startActivity(intent);
             }
         });
 

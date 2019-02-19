@@ -252,9 +252,10 @@
                 android:layout_marginTop="60dp"
                 android:background="@drawable/mybutton"
                 android:text="sign out"
-                android:textColor="#F70303"
+                android:textColor="#F44336"
                 android:layout_below="@id/worker_pno_tv"
                 android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
 
                 />
 

@@ -35,7 +35,7 @@
 
 
             <TextView
-                android:id="@+id/pending_worktxt"
+                android:id="@+id/pending_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -43,7 +43,7 @@
                 android:layout_marginStart="110dp"
                 android:layout_marginTop="15dp"
                 android:paddingLeft="4dp"
-                android:text="WORK"
+                android:text="NAME"
                 android:textColor="@color/colorAccent"
                 android:textSize="24sp" />
 
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_alignStart="@+id/pending_worktxt"
+                android:layout_alignStart="@+id/pending_user_name"
                 android:layout_marginBottom="18dp"
                 android:text="date"
                 android:textColor="@color/colorAccent" />
@@ -71,14 +71,15 @@
                 />
 
             <TextView
-                android:id="@+id/pending_user_name"
+                android:id="@+id/pending_worktxt"
                 android:layout_width="wrap_content"
                 android:layout_marginTop="4dp"
                 android:paddingLeft="4dp"
+                android:textColor="#000"
                 android:maxLines="1"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/pending_worktxt"
-                android:layout_below="@+id/pending_worktxt"
+                android:layout_alignStart="@+id/pending_user_name"
+                android:layout_below="@+id/pending_user_name"
                 android:text="kevin muriithi" />
 
             <TextView
@@ -88,7 +89,7 @@
                 android:layout_alignBottom="@+id/pending_date"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="20dp"
-                android:textColor="#faea09"
+                android:textColor="#F44336"
                 android:textSize="20dp"
                 android:text="REVIEW" />
 
@@ -97,10 +98,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/pending_worktxt"
-                android:layout_below="@+id/pending_user_name"
+                android:layout_below="@+id/pending_worktxt"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:maxLines="1"
+                android:textColor="@color/colorPrimaryDark"
+
                 android:drawableLeft="@drawable/ic_location"
                 android:text="TextView" />
 

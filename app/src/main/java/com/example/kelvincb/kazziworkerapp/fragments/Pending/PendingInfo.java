@@ -175,10 +175,8 @@ public class PendingInfo extends AppCompatActivity {
         text.setTypeface(font1);
 
         Button dialogButton =  dialog.findViewById(R.id.btn_dialog_yes);
-        Button dialogbutton_no=dialog.findViewById(R.id.btn_dialog_no);
 
         dialogButton.setTypeface(font1);
-        dialogbutton_no.setTypeface(font1);
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -189,14 +187,6 @@ public class PendingInfo extends AppCompatActivity {
                 }
                 dialog.dismiss();
 
-            }
-        });
-
-        dialogbutton_no.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                dialog.dismiss();
             }
         });
 

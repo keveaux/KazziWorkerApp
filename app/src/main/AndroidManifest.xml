@@ -17,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
+        <activity android:name=".fragments.accepted.AcceptedTaskInfo"></activity>
         <activity android:name=".MainActivity" />
 
         <service android:name=".LoginPackage.firebase.MyFirebaseMessagingService">
@@ -53,7 +54,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".trial"></activity>
+        <activity android:name=".trial" />
     </application>
 
 </manifest>

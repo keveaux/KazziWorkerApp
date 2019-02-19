@@ -30,26 +30,15 @@
         android:id="@+id/btn_dialog_yes"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_alignParentEnd="true"
         android:layout_below="@+id/text_dialog"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/button_main_background"
         android:gravity="center"
-        android:text="YES"
-        android:textColor="#ffffffff" />
-
-    <Button
-        android:id="@+id/btn_dialog_no"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:text="OK"
+        android:textColor="#ffffffff"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/btn_dialog_yes"
-        android:background="@drawable/button_main_background"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="NOPE"
-        android:textColor="#ffffffff" />
+        />
+
+
 
 </RelativeLayout>

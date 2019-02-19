@@ -49,7 +49,6 @@ public class PendingJsonDownloader {
 
                 }
                 try{
-                    tv.setVisibility(View.GONE);
 
                     PendingGetterSetterClass pendingGetterSetterClass;
                     JSONArray ja = response.getJSONArray("results");

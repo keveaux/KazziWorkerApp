@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,7 +21,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="@drawable/ic_back_arrow"
+            app:navigationIcon="@drawable/ic_arrow_back"
             app:theme="@style/ToolBarStyle"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -32,17 +33,17 @@
             android:layout_gravity="center"
             android:layout_marginTop="60dp"
             android:elevation="4dp"
-            />
+             />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/user_profile_image"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="6dp"
-            android:layout_marginBottom="40dp"
             android:gravity="center"
+            android:layout_marginBottom="40dp"
             android:text="Kevin Muriithi"
             android:textColor="#fff" />
 
@@ -59,21 +60,21 @@
         app:layout_constraintTop_toBottomOf="@+id/relative">
 
         <TextView
-            android:id="@+id/details"
+            android:id="@+id/acceptedTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/details"
+            android:text="@string/request"
             android:textColor="#000000"
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="10dp"
-            android:textSize="14sp"/>
+            android:textSize="12sp"/>
 
         <TextView
             android:id="@+id/textView_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/details"
+            android:layout_below="@+id/acceptedTV"
             android:text="Date of task :"
             android:layout_marginTop="20dp"
             android:textColor="#363636"
@@ -99,6 +100,7 @@
             android:layout_alignStart="@+id/textView_date"
             android:textSize="13dp"
             android:layout_marginTop="10dp"
+
             android:textColor="#363636"
             android:drawablePadding="4dp"
             android:text="Time:" />
@@ -124,6 +126,7 @@
             android:layout_alignStart="@+id/textView_time"
             android:textSize="13dp"
             android:layout_marginTop="10dp"
+
             android:textColor="#363636"
             android:drawablePadding="4dp"
             android:text="Description:" />
@@ -140,11 +143,37 @@
             android:paddingLeft="4dp"
             android:text="description"/>
 
+
+        <TextView
+            android:id="@+id/textView_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_jobdesc"
+            android:layout_alignStart="@+id/textView_time"
+            android:textSize="13dp"
+            android:layout_marginTop="10dp"
+
+            android:textColor="#363636"
+            android:drawablePadding="4dp"
+            android:text="Location:" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView_location"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/textView_location"
+            android:textSize="12sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingLeft="4dp"
+            android:text="location"/>
+
         <TextView
             android:id="@+id/textView_landmark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView_jobdesc"
+            android:layout_below="@+id/textView_location"
             android:layout_alignStart="@+id/textView_time"
             android:textSize="13dp"
             android:layout_marginTop="10dp"
@@ -164,37 +193,29 @@
             android:paddingLeft="4dp"
             android:text="description"/>
 
-        <Button
-            android:id="@+id/acceptbtn"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/roundbuttton"
-            android:layout_below="@+id/textView_landmark"
-            android:text="Accept Request"
-            android:textSize="12sp"
-            android:textColor="#fff"
-            android:textAllCaps="false"
-            android:layout_centerHorizontal="true"
-            />
 
-        <Button
-            android:id="@+id/rejectbtn"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/myroundbutton"
-            android:layout_below="@+id/acceptbtn"
-            android:layout_marginBottom="20dp"
-            android:text="Reject Request"
-            android:textSize="12sp"
-            android:textColor="#F80202"
-            android:textAllCaps="false"
-            android:layout_centerHorizontal="true"
-            />
+
+
+
+
+
 
 
     </RelativeLayout>
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:clickable="true"
+        android:src="@drawable/phone"
+        android:layout_marginBottom="10dp"
+        app:borderWidth="3dp"
+        app:backgroundTint="@color/colorPrimary"
+        />
 
 </android.support.constraint.ConstraintLayout>
