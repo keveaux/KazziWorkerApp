@@ -1,4 +1,4 @@
-package com.example.kelvincb.kazziworkerapp.fragments.accepted;
+package com.example.kelvincb.kazziworkerapp.fragments.acceptedRequests;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.kelvincb.kazziworkerapp.R;
 import com.example.kelvincb.kazziworkerapp.fetchWorkerInfo;

@@ -1,4 +1,4 @@
-package com.example.kelvincb.kazziworkerapp.fragments.accepted;
+package com.example.kelvincb.kazziworkerapp.fragments.acceptedRequests;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.example.kelvincb.kazziworkerapp.PicassoClient;
 import com.example.kelvincb.kazziworkerapp.R;
-import com.example.kelvincb.kazziworkerapp.fragments.Pending.PendingGetterSetterClass;
 
 import java.util.ArrayList;
 

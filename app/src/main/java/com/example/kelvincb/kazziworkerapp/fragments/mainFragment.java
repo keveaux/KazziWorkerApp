@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.kelvincb.kazziworkerapp.R;
-import com.example.kelvincb.kazziworkerapp.fragments.Pending.PendingRequest;
-import com.example.kelvincb.kazziworkerapp.fragments.accepted.AcceptedRequest;
+import com.example.kelvincb.kazziworkerapp.fragments.PendingRequests.PendingRequest;
+import com.example.kelvincb.kazziworkerapp.fragments.acceptedRequests.AcceptedRequest;
 
 import java.util.ArrayList;
 import java.util.List;

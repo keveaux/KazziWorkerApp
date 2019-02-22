@@ -28,7 +28,6 @@ public class WorkerProfile extends Fragment {
     View view;
     ImageView worker_image;
     TextView worker_name,worker_location,num_of_jobs,rating_tv,info,profession,phone_number;
-    Button logout;
     private FirebaseAuth mAuth;
     boolean doubleBackToExitPressedOnce = false;
 
@@ -54,14 +53,12 @@ public class WorkerProfile extends Fragment {
         info=view.findViewById(R.id.info);
         profession=view.findViewById(R.id.profession_tv);
         phone_number=view.findViewById(R.id.worker_pno_tv);
-        logout=view.findViewById(R.id.logout);
         final ProgressBar progressBar=view.findViewById(R.id.profile_progressBar);
 
         Typeface boldfont=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
 
         worker_name.setTypeface(boldfont);
         info.setTypeface(boldfont);
-        logout.setTypeface(boldfont);
         profession.setTypeface(boldfont);
         phone_number.setTypeface(boldfont);
 
@@ -99,7 +96,7 @@ public class WorkerProfile extends Fragment {
                 worker_location.setText(skillset);
 
                  if(rating==null ){
-                     Toast.makeText(getActivity(), "check your internet connection", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(getContext(), "check your internet connection", Toast.LENGTH_SHORT).show();
                  }else if(rating.equals("0")){
                      rating_tv.setText("0.0");
 
@@ -117,36 +114,36 @@ public class WorkerProfile extends Fragment {
 
 
         mAuth = FirebaseAuth.getInstance();
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (doubleBackToExitPressedOnce) {
-                    signOut();
-                    Intent i = new Intent(getContext(), LoginActivity.class);
-                    startActivity(i);
-                }
-                doubleBackToExitPressedOnce = true;
-                Toast.makeText(getActivity(), "Please click SIGN OUT again to exit", Toast.LENGTH_SHORT).show();
-
-                new Handler().postDelayed(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        doubleBackToExitPressedOnce=false;
-                    }
-                }, 2000);
-
-            }
-        });
+//        logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (doubleBackToExitPressedOnce) {
+//                    signOut();
+//                    Intent i = new Intent(getContext(), LoginActivity.class);
+//                    startActivity(i);
+//                }
+//                doubleBackToExitPressedOnce = true;
+//                Toast.makeText(getActivity(), "Please click SIGN OUT again to exit", Toast.LENGTH_SHORT).show();
+//
+//                new Handler().postDelayed(new Runnable() {
+//
+//                    @Override
+//                    public void run() {
+//                        doubleBackToExitPressedOnce=false;
+//                    }
+//                }, 2000);
+//
+//            }
+//        });
 
 
 
         return view;
     }
 
-    private void signOut() {
-        mAuth.signOut();
-    }
+//    private void signOut() {
+//        mAuth.signOut();
+//    }
 
 
 }

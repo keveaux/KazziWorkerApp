@@ -1,4 +1,4 @@
-package com.example.kelvincb.kazziworkerapp.fragments.accepted;
+package com.example.kelvincb.kazziworkerapp.fragments.acceptedRequests;
 
 import android.content.Context;
 import android.view.View;
@@ -13,7 +13,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kelvincb.kazziworkerapp.fragments.Pending.PendingAdapterClass;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

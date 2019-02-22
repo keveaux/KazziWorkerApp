@@ -1,4 +1,4 @@
-package com.example.kelvincb.kazziworkerapp.fragments.Pending;
+package com.example.kelvincb.kazziworkerapp.fragments.PendingRequests;
 
 public class PendingGetterSetterClass {
     String id,user_name,user_phone_number,date,time,job_desctiption,location,landmark,image_url,currentdate,status;

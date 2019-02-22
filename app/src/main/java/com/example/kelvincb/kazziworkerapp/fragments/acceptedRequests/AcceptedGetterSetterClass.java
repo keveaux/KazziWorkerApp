@@ -1,4 +1,4 @@
-package com.example.kelvincb.kazziworkerapp.fragments.accepted;
+package com.example.kelvincb.kazziworkerapp.fragments.acceptedRequests;
 
 public class AcceptedGetterSetterClass {
 

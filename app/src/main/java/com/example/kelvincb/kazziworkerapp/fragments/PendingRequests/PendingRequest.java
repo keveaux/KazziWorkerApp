@@ -1,4 +1,4 @@
-package com.example.kelvincb.kazziworkerapp.fragments.Pending;
+package com.example.kelvincb.kazziworkerapp.fragments.PendingRequests;
 
 import android.os.Bundle;
 import android.os.Handler;

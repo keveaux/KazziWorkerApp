@@ -1,11 +1,10 @@
-package com.example.kelvincb.kazziworkerapp.fragments.Pending;
+package com.example.kelvincb.kazziworkerapp.fragments.PendingRequests;
 
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
@@ -24,7 +23,6 @@ import com.example.kelvincb.kazziworkerapp.PicassoClient;
 import com.example.kelvincb.kazziworkerapp.R;
 import com.example.kelvincb.kazziworkerapp.myRequestHandler;
 import com.google.android.gms.ads.InterstitialAd;
-import com.squareup.picasso.RequestHandler;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
