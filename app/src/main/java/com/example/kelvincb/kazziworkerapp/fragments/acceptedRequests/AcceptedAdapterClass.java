@@ -63,7 +63,7 @@ public class AcceptedAdapterClass extends BaseAdapter{
         location.setTypeface(boldfont);
 
 
-        Typeface font=Typeface.createFromAsset(c.getAssets(),"RobotoSlab-Light.ttf");
+        Typeface font=Typeface.createFromAsset(c.getAssets(),"RobotoSlab-Regular.ttf");
         userName.setTypeface(font);
         work.setTypeface(font);
         date.setTypeface(font);

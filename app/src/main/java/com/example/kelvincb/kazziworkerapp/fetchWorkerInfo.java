@@ -20,7 +20,8 @@ import java.util.Map;
 public class fetchWorkerInfo {
 
     Context context;
-    String worker_id,worker_name,phone_no,occupation,skillSet,rating,no_of_ratings,imageUrl,jobsdone;
+    String worker_id,worker_name,phone_no,occupation,skillSet,rating,no_of_ratings,imageUrl,jobsdone,
+            service_one,service_two,service_three,service_four,service_five;
 
     public fetchWorkerInfo(Context context) {
         this.context = context;
@@ -70,6 +71,26 @@ public class fetchWorkerInfo {
         return phone_no;
     }
 
+    public String getService_one() {
+        return service_one;
+    }
+
+    public String getService_two() {
+        return service_two;
+    }
+
+    public String getService_three() {
+        return service_three;
+    }
+
+    public String getService_four() {
+        return service_four;
+    }
+
+    public String getService_five() {
+        return service_five;
+    }
+
     public void setContext(Context context) {
         this.context = context;
     }
@@ -106,6 +127,26 @@ public class fetchWorkerInfo {
         this.phone_no = phone_no;
     }
 
+    public void setService_one(String service_one) {
+        this.service_one = service_one;
+    }
+
+    public void setService_two(String service_two) {
+        this.service_two = service_two;
+    }
+
+    public void setService_three(String service_three) {
+        this.service_three = service_three;
+    }
+
+    public void setService_four(String service_four) {
+        this.service_four = service_four;
+    }
+
+    public void setService_five(String service_five) {
+        this.service_five = service_five;
+    }
+
     public void fetchData(){
         final fetchPhoneNumber fetchPhoneNumber=new fetchPhoneNumber(context);
         fetchPhoneNumber.mynumber();
@@ -129,6 +170,14 @@ public class fetchWorkerInfo {
                     String rating=parentObject.getJSONObject("results").getString("rating");
                     String no_of_rates=parentObject.getJSONObject("results").getString("numberOfRates");
                     String imageurl=parentObject.getJSONObject("results").getString("imageUrl");
+                    String jobsdone=parentObject.getJSONObject("results").getString("jobs");
+                    String service_one=parentObject.getJSONObject("results").getString("serviceOne");
+                    String service_two=parentObject.getJSONObject("results").getString("serviceTwo");
+                    String service_three=parentObject.getJSONObject("results").getString("serviceThree");
+                    String service_four=parentObject.getJSONObject("results").getString("serviceFour");
+                    String service_five=parentObject.getJSONObject("results").getString("serviceFive");
+
+
 
 
                     setWorker_name(name);
@@ -139,6 +188,12 @@ public class fetchWorkerInfo {
                     setRating(rating);
                     setNo_of_ratings(no_of_rates);
                     setImageUrl(imageurl);
+                    setJobsdone(jobsdone);
+                    setService_one(service_one);
+                    setService_two(service_two);
+                    setService_three(service_three);
+                    setService_four(service_four);
+                    setService_five(service_five);
 
 
 
