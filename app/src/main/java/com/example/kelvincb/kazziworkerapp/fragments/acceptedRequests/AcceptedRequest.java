@@ -3,9 +3,13 @@ package com.example.kelvincb.kazziworkerapp.fragments.acceptedRequests;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -19,6 +23,9 @@ public class AcceptedRequest extends Fragment {
     View view;
     private static String SITE_URL = "";
     ProgressBar myProgressBar;
+
+    private Animation animationUp;
+    private Animation animationDown;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,11 +91,17 @@ public class AcceptedRequest extends Fragment {
 
     public void fetchRequest(){
 
-        final ListView lv = view.findViewById(R.id.accepted_ListView);
+        final RecyclerView recyclerView = view.findViewById(R.id.accepted_recyclerview);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        animationUp = AnimationUtils.loadAnimation(getContext(), R.anim.slide_up);
+        animationDown = AnimationUtils.loadAnimation(getContext(), R.anim.slide_down);
 
         final TextView tv=view.findViewById(R.id.acceptedtxt);
 
-        new AcceptedJsonDownloader(getActivity()).retrieveRequestInfo(SITE_URL,lv,tv,myProgressBar);
+        new AcceptedJsonDownloader(getActivity()).retrieveRequestInfo(SITE_URL,recyclerView,tv,animationUp,animationDown,myProgressBar);
 
     }
 

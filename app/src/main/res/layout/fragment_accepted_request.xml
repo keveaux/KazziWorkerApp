@@ -16,9 +16,8 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="parent" />
 
-    <ListView
-        android:id="@+id/accepted_ListView"
-        class="android.support.v7.widget.RecyclerView"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/accepted_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"

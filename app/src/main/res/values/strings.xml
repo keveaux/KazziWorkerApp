@@ -26,4 +26,6 @@
     <string name="details">Request Details</string>
     <string name="accepted">your accepted request will appear here</string>
     <string name="request">Request details</string>
+    <string name="showmore">show more</string>
+    <string name="showless">show less</string>
 </resources>

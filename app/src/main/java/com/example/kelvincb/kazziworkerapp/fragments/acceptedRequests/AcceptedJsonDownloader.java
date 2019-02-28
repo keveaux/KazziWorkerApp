@@ -1,7 +1,9 @@
 package com.example.kelvincb.kazziworkerapp.fragments.acceptedRequests;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -13,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.kelvincb.kazziworkerapp.RecyclerAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,14 +25,14 @@ import java.util.ArrayList;
 public class AcceptedJsonDownloader {
 
     private final Context c;
-    private AcceptedAdapterClass adapter;
+    private RecyclerAdapter adapter;
     RequestQueue requestQueue;
 
     public AcceptedJsonDownloader(Context c) {
         this.c = c;
     }
 
-    public void retrieveRequestInfo(String URL, final ListView listView, final TextView tv, final ProgressBar myProgressBar) {
+    public void retrieveRequestInfo(String URL, final RecyclerView listView, final TextView tv, final Animation animationUp, final Animation animationDown, final ProgressBar myProgressBar) {
 
         final ArrayList<AcceptedGetterSetterClass> requestList = new ArrayList<>();
 
@@ -87,7 +90,7 @@ public class AcceptedJsonDownloader {
 
                     }
 
-                    adapter = new AcceptedAdapterClass(c,requestList);
+                    adapter = new RecyclerAdapter(c,animationUp,animationDown,requestList);
                     listView.setAdapter(adapter);
                     myProgressBar.setVisibility(View.GONE);
 
