@@ -17,9 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
-        <activity android:name=".fragments.acceptedRequests.AcceptedTaskInfo"></activity>
-        <activity android:name=".MainActivity"
-            />
+        <activity android:name=".Settings.SettingsActivity"></activity>
+        <activity android:name=".fragments.acceptedRequests.AcceptedTaskInfo" />
+        <activity android:name=".MainActivity" />
 
         <service android:name=".LoginPackage.firebase.MyFirebaseMessagingService">
             <intent-filter>

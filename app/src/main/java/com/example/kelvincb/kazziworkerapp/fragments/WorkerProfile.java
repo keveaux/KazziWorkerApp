@@ -1,5 +1,6 @@
 package com.example.kelvincb.kazziworkerapp.fragments;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -7,16 +8,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kelvincb.kazziworkerapp.PicassoClient;
 import com.example.kelvincb.kazziworkerapp.R;
+import com.example.kelvincb.kazziworkerapp.Settings.SettingsActivity;
 import com.example.kelvincb.kazziworkerapp.fetchWorkerInfo;
-import com.google.firebase.auth.FirebaseAuth;
-import com.veinhorn.tagview.TagView;
 
 import java.text.DecimalFormat;
 
@@ -26,9 +28,8 @@ public class WorkerProfile extends Fragment {
     View view;
     ImageView worker_image;
     TextView worker_name, worker_skillset,num_of_jobs,rating_tv,info,profession,phone_number;
-    private FirebaseAuth mAuth;
-    boolean doubleBackToExitPressedOnce = false;
     TextView tag_one,tag_two,tag_three,tag_four,tag_five;
+    RelativeLayout mylayout;
 
 
 
@@ -57,10 +58,11 @@ public class WorkerProfile extends Fragment {
         tag_three=view.findViewById(R.id.servicethree);
         tag_four=view.findViewById(R.id.servicefour);
         tag_five=view.findViewById(R.id.servicefive);
+        mylayout=view.findViewById(R.id.mylayout);
 
         final ProgressBar progressBar=view.findViewById(R.id.profile_progressBar);
 
-        Typeface boldfont=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
+        Typeface boldfont=Typeface.createFromAsset(getActivity().getAssets(),"Quicksand-Bold.ttf");
 
         worker_name.setTypeface(boldfont);
         info.setTypeface(boldfont);
@@ -68,8 +70,10 @@ public class WorkerProfile extends Fragment {
         rating_tv.setTypeface(boldfont);
 
 
-        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Regular.ttf");
+        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"Quicksand-Regular.ttf");
 
+        worker_skillset.setTypeface(font);
+        phone_number.setTypeface(font);
         worker_skillset.setTypeface(font);
         tag_one.setTypeface(font);
         tag_two.setTypeface(font);
@@ -90,6 +94,7 @@ public class WorkerProfile extends Fragment {
             public void run() {
 
                 progressBar.setVisibility(View.GONE);
+                mylayout.setVisibility(View.VISIBLE);
 
 
                 String name=fetchWorkerInfo.getWorker_name();
@@ -138,37 +143,14 @@ public class WorkerProfile extends Fragment {
 
 
 
-        mAuth = FirebaseAuth.getInstance();
-//        logout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (doubleBackToExitPressedOnce) {
-//                    signOut();
-//                    Intent i = new Intent(getContext(), LoginActivity.class);
-//                    startActivity(i);
-//                }
-//                doubleBackToExitPressedOnce = true;
-//                Toast.makeText(getActivity(), "Please click SIGN OUT again to exit", Toast.LENGTH_SHORT).show();
-//
-//                new Handler().postDelayed(new Runnable() {
-//
-//                    @Override
-//                    public void run() {
-//                        doubleBackToExitPressedOnce=false;
-//                    }
-//                }, 2000);
-//
-//            }
-//        });
+
 
 
 
         return view;
     }
 
-//    private void signOut() {
-//        mAuth.signOut();
-//    }
+
 
 
 }

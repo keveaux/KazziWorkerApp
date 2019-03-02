@@ -28,7 +28,7 @@ public class trial extends AppCompatActivity {
         animationUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up);
         animationDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
 //
-//        RecyclerAdapter recyclerViewAdapter = new RecyclerAdapter(this, animationUp, animationDown);
+//        AcceptedRequestRecyclerAdapter recyclerViewAdapter = new AcceptedRequestRecyclerAdapter(this, animationUp, animationDown);
 //        recyclerView.setAdapter(recyclerViewAdapter);
 
     }

@@ -24,9 +24,6 @@ public class AcceptedRequest extends Fragment {
     private static String SITE_URL = "";
     ProgressBar myProgressBar;
 
-    private Animation animationUp;
-    private Animation animationDown;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,28 +63,6 @@ public class AcceptedRequest extends Fragment {
         return view;
     }
 
-    @Override
-    public void onResume() {
-        final fetchWorkerInfo fetchWorkerInfo=new fetchWorkerInfo(getContext());
-        fetchWorkerInfo.fetchData();
-
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                String id=fetchWorkerInfo.getWorker_id();
-
-
-                SITE_URL = "http://104.248.124.210/android/iKazi/phpFiles/workerfetchAcceptedRequest.php?id=" +id;
-
-                fetchRequest();
-
-
-            }
-        }, 2000);
-        super.onResume();
-    }
 
     public void fetchRequest(){
 
@@ -96,12 +71,12 @@ public class AcceptedRequest extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        animationUp = AnimationUtils.loadAnimation(getContext(), R.anim.slide_up);
-        animationDown = AnimationUtils.loadAnimation(getContext(), R.anim.slide_down);
+        Animation animationUp = AnimationUtils.loadAnimation(getContext(), R.anim.slide_up);
+        Animation animationDown = AnimationUtils.loadAnimation(getContext(), R.anim.slide_down);
 
         final TextView tv=view.findViewById(R.id.acceptedtxt);
 
-        new AcceptedJsonDownloader(getActivity()).retrieveRequestInfo(SITE_URL,recyclerView,tv,animationUp,animationDown,myProgressBar);
+        new AcceptedJsonDownloader(getActivity()).retrieveRequestInfo(SITE_URL,recyclerView,tv, animationUp, animationDown,myProgressBar);
 
     }
 

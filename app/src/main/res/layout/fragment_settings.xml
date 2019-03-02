@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/strokeColor"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           >
+            <Switch
+                android:id="@+id/simpleSwitch"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Availability"
+                android:textSize="16sp"
+                android:gravity="left"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"/>
+
+            <View
+                android:id="@+id/separatorone"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/simpleSwitch"
+                android:layout_margin="10dp"
+                android:background="#797979"/>
+            <TextView
+                android:id="@+id/update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/separatorone"
+                android:layout_centerInParent="true"
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="WOULD YOU LIKE TO \n   UPDATE PROFILE"/>
+
+            <View
+                android:id="@+id/separatortwo"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/update"
+                android:layout_margin="10dp"
+                android:background="#797979"/>
+        </RelativeLayout>
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

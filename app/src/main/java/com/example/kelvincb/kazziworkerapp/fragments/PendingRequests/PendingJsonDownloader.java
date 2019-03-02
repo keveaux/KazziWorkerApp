@@ -1,8 +1,9 @@
 package com.example.kelvincb.kazziworkerapp.fragments.PendingRequests;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ListView;
+import android.view.animation.Animation;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,14 +23,14 @@ import java.util.ArrayList;
 public class PendingJsonDownloader {
 
     private final Context c;
-    private PendingAdapterClass adapter;
+    private PendingRequestRecyclerAdapter adapter;
     RequestQueue requestQueue;
 
     public PendingJsonDownloader(Context c) {
         this.c = c;
     }
 
-    public void retrieveRequestInfo(String URL, final ListView listView, final TextView tv, final ProgressBar myProgressBar) {
+    public void retrieveRequestInfo(String URL, final RecyclerView listView, final TextView tv, final Animation animationUp, final Animation animationDown, final ProgressBar myProgressBar)  {
 
         final ArrayList<PendingGetterSetterClass> requestList = new ArrayList<>();
 
@@ -92,7 +93,7 @@ public class PendingJsonDownloader {
 
                     }
 
-                    adapter = new PendingAdapterClass(c,requestList);
+                    adapter = new PendingRequestRecyclerAdapter(animationUp,animationDown,c,requestList);
                     listView.setAdapter(adapter);
                     myProgressBar.setVisibility(View.GONE);
 

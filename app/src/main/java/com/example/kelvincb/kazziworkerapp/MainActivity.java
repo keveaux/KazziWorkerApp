@@ -1,22 +1,23 @@
 package com.example.kelvincb.kazziworkerapp;
 
-import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.TextView;
 
-import com.example.kelvincb.kazziworkerapp.fragments.JobAds;
+import com.example.kelvincb.kazziworkerapp.Settings.SettingsActivity;
+import com.example.kelvincb.kazziworkerapp.fragments.JobAdsFragment;
 import com.example.kelvincb.kazziworkerapp.fragments.WorkerProfile;
-import com.example.kelvincb.kazziworkerapp.fragments.mainFragment;
-import com.google.android.gms.ads.AdRequest;
+import com.example.kelvincb.kazziworkerapp.fragments.HomeFragment;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -37,12 +38,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MobileAds.initialize(this,
-                "ca-app-pub-3940256099942544~3347511713");
+        Toolbar toolbar=findViewById(R.id.main_toolbar);
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+//        MobileAds.initialize(this,
+//                "ca-app-pub-3940256099942544~3347511713");
+//
+//        mAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
+
+        TextView appname=findViewById(R.id.appname);
+        Typeface font=Typeface.createFromAsset(getAssets(),"Quicksand-Bold.ttf");
+        appname.setTypeface(font);
 
 
         navigation =  findViewById(R.id.navigation);
@@ -71,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                             pushFragmentIntoStack(R.id.navigation_home);
                         }
                         isBackPressed = false;
-                        fragment=new mainFragment();
+                        fragment=new HomeFragment();
                         loadFragment(fragment);
                         return true;
 
@@ -80,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                             pushFragmentIntoStack(R.id.navigation_ads);
                         }
                         isBackPressed = false;
-                        fragment=new JobAds();
+                        fragment=new JobAdsFragment();
                         loadFragment(fragment);
                         return true;
 
@@ -122,9 +133,9 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.frame_container);
 
-        if (currentFragment instanceof mainFragment) {
+        if (currentFragment instanceof HomeFragment) {
 
-            fragment=new mainFragment();
+            fragment=new HomeFragment();
             loadFragment(fragment);
 
         }
@@ -142,6 +153,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
 
 
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.navigation_settings:
+                Intent intent=new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }

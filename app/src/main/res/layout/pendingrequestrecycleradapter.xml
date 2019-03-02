@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="6dp"
+    card_view:cardBackgroundColor="@color/strokeColor">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp">
+
+        <RelativeLayout
+            android:id="@+id/upperLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@null"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                 />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/image"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:textAllCaps="true"
+                android:textColor="#000"
+                android:text="Kevin Muriithi"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_toRightOf="@+id/image"
+                android:paddingLeft="10dp"
+                android:text="February 3rd 2019, "
+                android:textColor="#6F6D6D"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13:13"
+                android:textColor="#6F6D6D"
+                android:layout_below="@+id/title"
+                android:layout_toEndOf="@+id/date"/>
+
+
+            <TextView
+                android:id="@+id/show_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date"
+                android:layout_toRightOf="@+id/image"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/arrow_down"
+                android:textColor="#000"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:text="show more"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lowerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/upperLayout"
+            android:layout_margin="10dp"
+            >
+
+            <TextView
+                android:id="@+id/job_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:layout_marginStart="10dp"
+                android:textColor="#000"
+                android:text="I need someone to come clean 3 bags of clothes and 10 shoes"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/job_description"
+                android:text="Roysambu Lumumba Drive"
+                android:drawableLeft="@drawable/ic_location"
+                android:drawablePadding="5dp"
+                android:textColor="#000"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="10dp"
+                />
+
+            <TextView
+                android:id="@+id/landmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:drawableLeft="@drawable/ic_landmark"
+                android:drawablePadding="5dp"
+                android:layout_below="@+id/location"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="10dp"/>
+
+            <Button
+                android:id="@+id/rejectjobbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/landmark"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/buttonbg"
+                android:text="Decline"
+                android:textColor="#fff"/>
+
+            <Button
+                android:id="@+id/acceptjobbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/landmark"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/acceptbtnbg"
+                android:text="Accept"
+                android:textStyle="bold"
+                android:textColor="#fff"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+

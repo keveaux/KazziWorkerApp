@@ -3,9 +3,13 @@ package com.example.kelvincb.kazziworkerapp.fragments.PendingRequests;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -60,34 +64,22 @@ public class PendingRequest extends Fragment {
         return view;
     }
 
-    @Override
-    public void onResume() {
-        final fetchWorkerInfo fetchWorkerID=new fetchWorkerInfo(getContext());
-        fetchWorkerID.fetchData();
 
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                String id=fetchWorkerID.getWorker_id();
-                SITE_URL = "http://104.248.124.210/android/iKazi/phpFiles/workerfetchPendingRequests.php?id=" +id;
-
-                fetchRequest();
-
-
-            }
-        }, 2000);
-        super.onResume();
-    }
 
     public void fetchRequest(){
 
-        final ListView lv = view.findViewById(R.id.processed_ListView);
+        final RecyclerView recyclerView = view.findViewById(R.id.processing_Recyclerview);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        Animation animationUp = AnimationUtils.loadAnimation(getContext(), R.anim.slide_up);
+        Animation animationDown = AnimationUtils.loadAnimation(getContext(), R.anim.slide_down);
 
         final TextView tv=view.findViewById(R.id.processingtxt);
 
-        new PendingJsonDownloader (getActivity()).retrieveRequestInfo(SITE_URL,lv,tv,myProgressBar);
+        new PendingJsonDownloader (getActivity()).retrieveRequestInfo(SITE_URL,recyclerView,tv, animationUp, animationDown,myProgressBar);
+
 
     }
 

@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.example.kelvincb.kazziworkerapp.R;
 
 
-public class JobAds extends Fragment {
+public class JobAdsFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

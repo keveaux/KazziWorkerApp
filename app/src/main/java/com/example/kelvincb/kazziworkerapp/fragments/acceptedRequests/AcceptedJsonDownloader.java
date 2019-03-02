@@ -4,7 +4,6 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.animation.Animation;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,7 +14,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kelvincb.kazziworkerapp.RecyclerAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -25,7 +23,7 @@ import java.util.ArrayList;
 public class AcceptedJsonDownloader {
 
     private final Context c;
-    private RecyclerAdapter adapter;
+    private AcceptedRequestRecyclerAdapter adapter;
     RequestQueue requestQueue;
 
     public AcceptedJsonDownloader(Context c) {
@@ -70,7 +68,7 @@ public class AcceptedJsonDownloader {
                         String url=jsonObject.getString("image");
                         String location=jsonObject.getString("location");
                         String currentdate=jsonObject.getString("currentdate");
-
+                        String status=jsonObject.getString("status");
 
                         acceptedGetterSetterClass=new AcceptedGetterSetterClass();
                         acceptedGetterSetterClass.setUser_name(user_name);
@@ -82,15 +80,19 @@ public class AcceptedJsonDownloader {
                         acceptedGetterSetterClass.setImage_url(url);
                         acceptedGetterSetterClass.setLocation(location);
                         acceptedGetterSetterClass.setDatesent(currentdate);
+                        acceptedGetterSetterClass.setStatus(status);
 
+                        if(acceptedGetterSetterClass.getStatus().equals("1")){
+                            requestList.add(acceptedGetterSetterClass);
 
-                        requestList.add(acceptedGetterSetterClass);
+                        }
+
 
 
 
                     }
 
-                    adapter = new RecyclerAdapter(c,animationUp,animationDown,requestList);
+                    adapter = new AcceptedRequestRecyclerAdapter(c,animationUp,animationDown,requestList);
                     listView.setAdapter(adapter);
                     myProgressBar.setVisibility(View.GONE);
 

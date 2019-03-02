@@ -1,7 +1,9 @@
-package com.example.kelvincb.kazziworkerapp;
+package com.example.kelvincb.kazziworkerapp.fragments.acceptedRequests;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.CountDownTimer;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,18 +15,19 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.kelvincb.kazziworkerapp.fragments.acceptedRequests.AcceptedGetterSetterClass;
+import com.example.kelvincb.kazziworkerapp.PicassoClient;
+import com.example.kelvincb.kazziworkerapp.R;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ReyclerViewHolder> {
+public class AcceptedRequestRecyclerAdapter extends RecyclerView.Adapter<AcceptedRequestRecyclerAdapter.ReyclerViewHolder> {
     private LayoutInflater layoutInflater;
     private Animation animationUp, animationDown;
     private Context context;
     private final int COUNTDOWN_RUNNING_TIME = 500;
     ArrayList<AcceptedGetterSetterClass> requestList;
 
-    public RecyclerAdapter(Context context, Animation animationUp, Animation animationDown,ArrayList<AcceptedGetterSetterClass> requestList) {
+    public AcceptedRequestRecyclerAdapter(Context context, Animation animationUp, Animation animationDown, ArrayList<AcceptedGetterSetterClass> requestList) {
         this.layoutInflater = LayoutInflater.from(context);
         this.animationDown = animationDown;
         this.animationUp = animationUp;
@@ -34,16 +37,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Reycle
 
     @Override
     public ReyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View item = layoutInflater.inflate(R.layout.recycleradapter, parent, false);
+        View item = layoutInflater.inflate(R.layout.acceptedrequestsrecycleradapter, parent, false);
 
         return new ReyclerViewHolder(item);
     }
 
     @Override
-    public void onBindViewHolder(final ReyclerViewHolder holder, int position) {
+    public void onBindViewHolder(final ReyclerViewHolder holder, final int position) {
 
         Typeface bold_font=Typeface.createFromAsset(context.getAssets(),"Quicksand-Bold.ttf");
-        Typeface light_font=Typeface.createFromAsset(context.getAssets(),"Quicksand-Light.ttf");
         Typeface regular_font=Typeface.createFromAsset(context.getAssets(),"Quicksand-Regular.ttf");
 
 
@@ -56,8 +58,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Reycle
         holder.landmark.setText(requestList.get(position).getLandmark());
 
         holder.name.setTypeface(bold_font);
-        holder.date.setTypeface(light_font);
-        holder.time.setTypeface(light_font);
+        holder.date.setTypeface(regular_font);
+        holder.time.setTypeface(regular_font);
         holder.description.setTypeface(regular_font);
         holder.location.setTypeface(regular_font);
         holder.landmark.setTypeface(regular_font);
@@ -98,11 +100,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Reycle
                 }
             }
         });
+
+        holder.call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", requestList.get(position).getUser_phone_number(), null));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return requestList.size();
     }
 
     class ReyclerViewHolder extends RecyclerView.ViewHolder {
@@ -110,7 +120,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Reycle
         private TextView showMore,name,date,time,description,location,landmark;
         private RelativeLayout contentLayout;
 
-        Button accept,decline;
+        Button call;
 
         private ReyclerViewHolder(final View v) {
             super(v);
@@ -122,8 +132,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Reycle
             time =  v.findViewById(R.id.time);
             description =  v.findViewById(R.id.job_description);
             location =  v.findViewById(R.id.location);
-            accept =  v.findViewById(R.id.acceptjobbtn);
-            decline =  v.findViewById(R.id.declinejobbtn);
+            call =  v.findViewById(R.id.callbtn);
             name=v.findViewById(R.id.title);
             landmark=v.findViewById(R.id.landmark);
 

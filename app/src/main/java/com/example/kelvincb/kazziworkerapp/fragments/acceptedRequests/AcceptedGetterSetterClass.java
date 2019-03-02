@@ -2,7 +2,7 @@ package com.example.kelvincb.kazziworkerapp.fragments.acceptedRequests;
 
 public class AcceptedGetterSetterClass {
 
-    String user_name,user_phone_number,date,time,jobdescription,location,landmark,datesent,workerid,image_url;
+    String user_name,user_phone_number,date,time,jobdescription,location,landmark,datesent,workerid,image_url,status;
 
     public String getUser_name() {
         return user_name;
@@ -44,6 +44,10 @@ public class AcceptedGetterSetterClass {
         return image_url;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
     public void setUser_name(String user_name) {
         this.user_name = user_name;
     }
@@ -82,5 +86,9 @@ public class AcceptedGetterSetterClass {
 
     public void setImage_url(String image_url) {
         this.image_url = image_url;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

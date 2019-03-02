@@ -19,7 +19,7 @@ import com.example.kelvincb.kazziworkerapp.fragments.acceptedRequests.AcceptedRe
 import java.util.ArrayList;
 import java.util.List;
 
-public class mainFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
 
     View view;
@@ -52,21 +52,20 @@ public class mainFragment extends Fragment {
 
         TextView tabOne = (TextView) LayoutInflater.from(getActivity()).inflate(R.layout.custom_tab, null);
         tabOne.setText("PENDING");
-        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
+        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"Quicksand-Bold.ttf");
         tabOne.setTypeface(font);
         tabLayout.getTabAt(0).setCustomView(tabOne);
 
         TextView tabTwo = (TextView) LayoutInflater.from(getActivity()).inflate(R.layout.custom_tab, null);
         tabTwo.setText("ACCEPTED");
-        Typeface font2=Typeface.createFromAsset(getActivity().getAssets(),"RobotoSlab-Bold.ttf");
-        tabTwo.setTypeface(font2);
+        tabTwo.setTypeface(font);
         tabLayout.getTabAt(1).setCustomView(tabTwo);
 
 
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        mainFragment.ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
+        HomeFragment.ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
         adapter.addFrag(new PendingRequest(), "ONE");
         adapter.addFrag(new AcceptedRequest(), "TWO");
         viewPager.setAdapter(adapter);
