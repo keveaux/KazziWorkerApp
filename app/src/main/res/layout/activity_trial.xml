@@ -10,22 +10,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/relative"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginBottom="8dp"
             android:background="@color/strokeColor"
+            android:orientation="vertical"
             tools:ignore="MissingConstraints">
 
-<android.support.v7.widget.RecyclerView
-    android:id="@+id/recycler_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/coinstxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available coins: 00"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                />
 
-</android.support.v7.widget.RecyclerView>
-        </RelativeLayout>
+            <Button
+                android:id="@+id/buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buy Some Coins"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/watchad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Earn coins by watching video"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>
 

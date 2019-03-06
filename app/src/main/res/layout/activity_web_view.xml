@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Settings.SettingsActivity">
+    >
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -15,34 +15,23 @@
         app:theme="@style/ToolBarStyle">
 
         <TextView
-            android:id="@+id/settingstitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="start"
-            android:text="Settings"
+            android:text="update profile"
             android:textSize="23sp"
             android:textColor="#fff"
             />
     </android.support.v7.widget.Toolbar>
 
-    <ProgressBar
-        android:id="@+id/settings_progressbar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:indeterminateDrawable="@drawable/progress"
-       android:layout_below="@+id/toolbar"
-        android:visibility="gone"/>
-
     <FrameLayout
-        android:id="@+id/settings_frame_container"
+        android:id="@+id/webview_frame_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_below="@+id/toolbar"
-        android:visibility="gone"
-    />
+        />
 
 </RelativeLayout>

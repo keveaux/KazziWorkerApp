@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/navigation_settings"
         android:title="Settings"
-
+        />
+    <item
+        android:id="@+id/navigation_ads"
+        android:title="ads"
+        android:icon="@drawable/advertising"
+        app:showAsAction="always"
         />
 </menu>

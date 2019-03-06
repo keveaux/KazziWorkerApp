@@ -1,4 +1,4 @@
-package com.example.kelvincb.kazziworkerapp.fragments;
+package com.example.kelvincb.kazziworkerapp.WebViewPackage;
 
 import android.content.Context;
 import android.net.Uri;
@@ -7,11 +7,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 import com.example.kelvincb.kazziworkerapp.R;
 
 
-public class JobAdsFragment extends Fragment {
+public class WebViewFragment extends Fragment {
+
+
+    WebView webView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,7 +27,15 @@ public class JobAdsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_job_ads, container, false);
+        View v= inflater.inflate(R.layout.fragment_web_view, container, false);
+
+        webView=new WebView(getContext());
+        getActivity().setContentView(webView);
+        webView.loadUrl("");
+
+        return v;
     }
+
+
 
 }

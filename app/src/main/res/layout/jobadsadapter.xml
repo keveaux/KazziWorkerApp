@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/jobscardview"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="6dp"
+    card_view:cardBackgroundColor="@color/strokeColor">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp">
+
+<RelativeLayout
+    android:id="@+id/upperLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/jobimage"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:src="@drawable/kakuzi"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/jobimage"
+        android:background="#80000000"
+        >
+        <TextView
+            android:id="@+id/business_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kakuzi Limited"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/strokeColor"
+            android:layout_centerVertical="true"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/upperLayout"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/job"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Management Trainee, Horticulture Division"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#43A047"
+                />
+
+            <TextView
+                android:id="@+id/jobdesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/job"
+                android:layout_marginBottom="10dp"
+                android:textColor="#B36824"
+                android:text="We wish to recruit a freshly qualified graduate as Management Trainee to strengthen the management team in its Horticulture Division."
+                />
+
+        <TextView
+            android:id="@+id/peoplerequired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:drawableLeft="@drawable/people"
+            android:drawablePadding="6dp"
+            android:layout_below="@+id/jobdesc"
+            android:text="4 people required"
+            android:layout_marginBottom="10dp"
+            android:textSize="13sp"
+            />
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/peoplerequired"
+                android:drawableLeft="@drawable/ic_landmark"
+                android:drawablePadding="6dp"
+                android:textColor="#000"
+                android:text="Nairobi"
+                android:textSize="13sp"
+
+                />
+
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

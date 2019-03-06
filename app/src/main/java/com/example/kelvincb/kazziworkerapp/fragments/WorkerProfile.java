@@ -27,7 +27,7 @@ public class WorkerProfile extends Fragment {
 
     View view;
     ImageView worker_image;
-    TextView worker_name, worker_skillset,num_of_jobs,rating_tv,info,profession,phone_number;
+    TextView worker_name, worker_skillset,num_of_jobs,rating_tv,info,profession,phone_number,location,email;
     TextView tag_one,tag_two,tag_three,tag_four,tag_five;
     RelativeLayout mylayout;
 
@@ -59,6 +59,10 @@ public class WorkerProfile extends Fragment {
         tag_four=view.findViewById(R.id.servicefour);
         tag_five=view.findViewById(R.id.servicefive);
         mylayout=view.findViewById(R.id.mylayout);
+        email=view.findViewById(R.id.email);
+        location=view.findViewById(R.id.locationtxt);
+
+
 
         final ProgressBar progressBar=view.findViewById(R.id.profile_progressBar);
 
@@ -80,6 +84,7 @@ public class WorkerProfile extends Fragment {
         tag_three.setTypeface(font);
         tag_four.setTypeface(font);
         tag_five.setTypeface(font);
+        email.setTypeface(font);
 
 
         profession.setTypeface(font);
@@ -110,6 +115,8 @@ public class WorkerProfile extends Fragment {
                 String service_four=fetchWorkerInfo.getService_four();
                 String service_five=fetchWorkerInfo.getService_five();
                 String jobsdone=fetchWorkerInfo.getJobsdone();
+                String emailstr=fetchWorkerInfo.getEmail();
+                String locationstr=fetchWorkerInfo.getLocation();
 
 
 
@@ -123,6 +130,8 @@ public class WorkerProfile extends Fragment {
                 tag_three.setText(service_three);
                 tag_four.setText(service_four);
                 tag_five.setText(service_five);
+                email.setText(emailstr);
+                location.setText(locationstr);
 
 
                 if(rating==null ){

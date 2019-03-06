@@ -18,17 +18,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
            >
-            <Switch
+            <android.support.v7.widget.SwitchCompat
                 android:id="@+id/simpleSwitch"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Availability"
                 android:textSize="16sp"
-                android:gravity="left"
+                android:gravity="start"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentEnd="true"
+                android:checked="true"
+                android:theme="@style/SCBSwitch"
+                />
 
             <View
                 android:id="@+id/separatorone"
@@ -37,21 +41,53 @@
                 android:layout_below="@id/simpleSwitch"
                 android:layout_margin="10dp"
                 android:background="#797979"/>
-            <TextView
+            <RelativeLayout
                 android:id="@+id/update"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/separatorone"
-                android:layout_centerInParent="true"
-                android:textSize="16sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="WOULD YOU LIKE TO \n   UPDATE PROFILE"/>
+                android:layout_below="@id/separatorone">
+                <TextView
+                    android:id="@+id/updatetxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="WOULD YOU LIKE TO \n   UPDATE PROFILE"/>
+            </RelativeLayout>
+
 
             <View
                 android:id="@+id/separatortwo"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_below="@id/update"
+                android:layout_margin="10dp"
+                android:background="#797979"/>
+
+            <RelativeLayout
+                android:id="@+id/signout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/separatortwo"
+                >
+
+                <TextView
+                    android:id="@+id/signouttxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"
+                    android:textColor="#D50000"
+                    android:text="Sign Out"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/separatorthree"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/signout"
                 android:layout_margin="10dp"
                 android:background="#797979"/>
         </RelativeLayout>

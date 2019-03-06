@@ -20,7 +20,7 @@ import java.util.Map;
 public class fetchWorkerInfo {
 
     Context context;
-    String worker_id,worker_name,phone_no,occupation,skillSet,rating,no_of_ratings,imageUrl,jobsdone,
+    String worker_id,worker_name,email,location,phone_no,occupation,skillSet,rating,no_of_ratings,imageUrl,jobsdone,
             service_one,service_two,service_three,service_four,service_five;
 
     public fetchWorkerInfo(Context context) {
@@ -91,6 +91,14 @@ public class fetchWorkerInfo {
         return service_five;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
     public void setContext(Context context) {
         this.context = context;
     }
@@ -147,6 +155,14 @@ public class fetchWorkerInfo {
         this.service_five = service_five;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public void fetchData(){
         final fetchPhoneNumber fetchPhoneNumber=new fetchPhoneNumber(context);
         fetchPhoneNumber.mynumber();
@@ -176,6 +192,9 @@ public class fetchWorkerInfo {
                     String service_three=parentObject.getJSONObject("results").getString("serviceThree");
                     String service_four=parentObject.getJSONObject("results").getString("serviceFour");
                     String service_five=parentObject.getJSONObject("results").getString("serviceFive");
+                    String email=parentObject.getJSONObject("results").getString("email");
+                    String location=parentObject.getJSONObject("results").getString("location");
+
 
 
 
@@ -194,6 +213,8 @@ public class fetchWorkerInfo {
                     setService_three(service_three);
                     setService_four(service_four);
                     setService_five(service_five);
+                    setLocation(location);
+                    setEmail(email);
 
 
 

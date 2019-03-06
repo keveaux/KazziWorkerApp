@@ -1,6 +1,7 @@
 package com.example.kelvincb.kazziworkerapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -14,13 +15,18 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.kelvincb.kazziworkerapp.Settings.SettingsActivity;
-import com.example.kelvincb.kazziworkerapp.fragments.JobAdsFragment;
+import com.example.kelvincb.kazziworkerapp.fragments.JobAds.JobAdsFragment;
+import com.example.kelvincb.kazziworkerapp.fragments.JobAds.ads;
 import com.example.kelvincb.kazziworkerapp.fragments.WorkerProfile;
 import com.example.kelvincb.kazziworkerapp.fragments.HomeFragment;
 import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -44,12 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-//        MobileAds.initialize(this,
-//                "ca-app-pub-3940256099942544~3347511713");
-//
-//        mAdView = findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
+
 
         TextView appname=findViewById(R.id.appname);
         Typeface font=Typeface.createFromAsset(getAssets(),"Quicksand-Bold.ttf");
@@ -161,6 +162,20 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    public void confetti(){
+        KonfettiView viewKonfetti=findViewById(R.id.viewKonfetti);
+        viewKonfetti.build()
+                .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA,Color.BLUE,Color.RED,Color.CYAN)
+                .setDirection(0.0, 359.0)
+                .setSpeed(1f, 5f)
+                .addSizes(new Size(7,8))
+                .setFadeOutEnabled(true)
+                .setTimeToLive(2000L)
+                .addShapes(Shape.RECT, Shape.CIRCLE)
+                .setPosition(-50f, viewKonfetti.getWidth() + 50f, -50f, -50f)
+                .streamFor(300, 5000L);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -168,6 +183,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.navigation_settings:
                 Intent intent=new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.navigation_ads:
+                confetti();
+                new ads(getApplicationContext());
                 return true;
         }
 

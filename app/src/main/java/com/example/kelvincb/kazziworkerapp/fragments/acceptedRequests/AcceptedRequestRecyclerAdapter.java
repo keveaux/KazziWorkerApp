@@ -108,6 +108,8 @@ public class AcceptedRequestRecyclerAdapter extends RecyclerView.Adapter<Accepte
                 context.startActivity(intent);
             }
         });
+
+
     }
 
     @Override
