@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.kelvincb.kazziworkerapp.Settings.SettingsActivity;
+import com.example.kelvincb.kazziworkerapp.fragments.AboutFragment;
 import com.example.kelvincb.kazziworkerapp.fragments.JobAds.JobAdsFragment;
 import com.example.kelvincb.kazziworkerapp.fragments.JobAds.ads;
 import com.example.kelvincb.kazziworkerapp.fragments.WorkerProfile;
@@ -183,6 +184,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.navigation_settings:
                 Intent intent=new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.navigation_about:
+               loadFragment(new AboutFragment());
                 break;
             case R.id.navigation_ads:
                 confetti();

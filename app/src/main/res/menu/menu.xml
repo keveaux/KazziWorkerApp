@@ -7,6 +7,11 @@
         android:title="Settings"
         />
     <item
+        android:id="@+id/navigation_about"
+        android:title="About Kazzi"
+        />
+
+    <item
         android:id="@+id/navigation_ads"
         android:title="ads"
         android:icon="@drawable/advertising"
