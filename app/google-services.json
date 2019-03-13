@@ -93,6 +93,50 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326991550645:android:0c58b12ac95854a7",
+        "android_client_info": {
+          "package_name": "creativebrands.kazziworker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326991550645-ntsk27ralcjv50fp75i6l8f0cuhm6hsq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "creativebrands.kazziworker",
+            "certificate_hash": "50bff33a48ac66f549ee04c2c8b8e151f9a42897"
+          }
+        },
+        {
+          "client_id": "326991550645-8v106uuesacb0shd9e1a37m06qcn8i1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrbmZUYh2cM8jfiu3L5wzQNZxLICkflmQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326991550645-8v106uuesacb0shd9e1a37m06qcn8i1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

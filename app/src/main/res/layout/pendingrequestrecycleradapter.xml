@@ -75,7 +75,7 @@
                 android:textColor="#000"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
-                android:text="show more"
+                android:text="show less"
                 android:textStyle="bold" />
         </RelativeLayout>
 

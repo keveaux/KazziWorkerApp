@@ -196,9 +196,8 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/star"
                             android:layout_alignStart="@+id/star"
-                            android:layout_marginTop="6dp"
                             android:textColor="#000"
-                            android:textSize="13sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/rating"
@@ -233,10 +232,9 @@
                             android:layout_below="@+id/tasks"
                             android:layout_alignStart="@+id/tasks"
                             android:layout_alignParentEnd="true"
-                            android:layout_marginStart="4dp"
-                            android:layout_marginTop="10dp"
                             android:textColor="#000"
-                            android:textSize="13sp" />
+                            android:textSize="16sp"
+                            android:layout_marginStart="4dp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -435,7 +433,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="10dp"
-                                android:text="Description"
+                                android:text="Bio"
                                 android:textColor="#000"
                                 android:textStyle="bold" />
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kelvincb.kazziworkerapp">
+    package="creativebrands.kazziworker">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -18,24 +18,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
-        <activity android:name=".WebViewPackage.WebViewActivity"></activity>
-        <activity android:name=".Settings.SettingsActivity" />
-        <activity android:name=".fragments.acceptedRequests.AcceptedTaskInfo" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="creativebrands.kazziworker.WebViewPackage.WebViewActivity"></activity>
+        <activity android:name="creativebrands.kazziworker.Settings.SettingsActivity" />
+        <activity android:name="creativebrands.kazziworker.fragments.acceptedRequests.AcceptedTaskInfo" />
+        <activity android:name="creativebrands.kazziworker.MainActivity" />
 
-        <service android:name=".LoginPackage.firebase.MyFirebaseMessagingService">
+        <service android:name="creativebrands.kazziworker.LoginPackage.firebase.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".LoginPackage.firebase.MyFirebaseInstanceIdService">
+        <service android:name="creativebrands.kazziworker.LoginPackage.firebase.MyFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
         <activity
-            android:name=".IntroSlider.WelcomeActivity"
+            android:name="creativebrands.kazziworker.IntroSlider.WelcomeActivity"
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,22 +44,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".splashScreen.SplashScreenActivity"
+            android:name="creativebrands.kazziworker.splashScreen.SplashScreenActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
-            android:name=".LoginPackage.LoginActivity"
+            android:name="creativebrands.kazziworker.LoginPackage.LoginActivity"
             android:theme="@style/MyMaterialTheme" />
-        <activity android:name=".fragments.PendingRequests.PendingInfo" />
+        <activity android:name="creativebrands.kazziworker.fragments.PendingRequests.PendingInfo" />
 
-        <service android:name=".FCMMessagingService">
+        <service android:name="creativebrands.kazziworker.FCMMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".trial" >
 
-        </activity>
     </application>
 
 </manifest>

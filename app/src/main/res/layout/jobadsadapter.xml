@@ -24,8 +24,7 @@
     <ImageView
         android:id="@+id/jobimage"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:src="@drawable/kakuzi"
+        android:layout_height="180dp"
         />
     <RelativeLayout
         android:layout_width="match_parent"

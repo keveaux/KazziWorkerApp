@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.acceptedRequests.AcceptedRequest">
+    tools:context="creativebrands.kazziworker.fragments.acceptedRequests.AcceptedRequest">
 
     <ProgressBar
         android:id="@+id/accepted_progressbar"

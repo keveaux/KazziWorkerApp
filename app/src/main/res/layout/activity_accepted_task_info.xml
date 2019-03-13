@@ -129,7 +129,7 @@
 
             android:textColor="#363636"
             android:drawablePadding="4dp"
-            android:text="Description:" />
+            android:text="Bio:" />
 
         <TextView
             android:id="@+id/jobDescription"
